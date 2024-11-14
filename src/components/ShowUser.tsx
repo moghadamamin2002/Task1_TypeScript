@@ -1,26 +1,29 @@
 import { useState } from "react";
 import Button from "./Button";
-import { Todo } from "./Display";
 
-interface Props{
-    data : Todo[]
+export interface Todo {
+  userId: number;
+  id: number;
+  title: string;
+  completed: boolean;
 }
 
-const ShowUser = ({ data } : Props) => {
-  console.log("Show User :" + data);
+interface Props {
+  data: Todo[];
+}
 
-
-//   console.log(
-//     "show User : " + typeof data.find((todo) => todo.id == number).title
-//   );
-
-  const [number, setNumber] = useState(1);
+const ShowUser = ({ data }: Props) => {
+  const [number, setNumber] = useState<number>(1);
 
   const Increase = () => {
     setNumber(number + 1);
   };
   const DecreaseNumber = () => {
-    number < 2 ? setNumber(1) : setNumber(number - 1);
+    if (number < 2) {
+      setNumber(1);
+    } else {
+      setNumber(number - 1);
+    }
   };
   console.log("number :" + number);
 
@@ -75,6 +78,5 @@ const ShowUser = ({ data } : Props) => {
     </>
   );
 };
-
 
 export default ShowUser;

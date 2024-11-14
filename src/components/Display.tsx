@@ -1,18 +1,9 @@
 import Button from "./Button";
 import { Outlet, useNavigate } from "react-router-dom";
-export interface Todo {
-    userId : number
-    id : number
-    title : string
-    completed : boolean
-}
-interface Props{
-    data : Todo[]
-}
 
-const Display = ({ data } : Props) => {
-  console.log("Display : " + data);
-  console.log("type of data :" + Array.isArray(data));
+
+const Display = () => {
+
 
   const navigate = useNavigate();
   return (

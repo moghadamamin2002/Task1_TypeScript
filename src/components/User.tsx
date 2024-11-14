@@ -1,10 +1,10 @@
-import { Todo } from "./Display";
+import { Todo } from "./ShowUser";
 interface Props {
   data: Todo[];
 }
 
 const User = ({ data }: Props) => {
-  console.log("User : " + data);
+
 
   return (
     <>
